@@ -146,7 +146,7 @@ const start = async () => {
         this.url = this.xhr.getResponseHeader("Location");
         this.sendFile();
       } else {
-        this?.onError(this.xhr.response);
+        this?.onError(JSON.parse(this.xhr.response));
       }
     }
 
@@ -166,7 +166,7 @@ const start = async () => {
         if (xhr.status === 200) {
           this?.onComplete(JSON.parse(xhr.response));
         } else {
-          this?.onError(xhr.response);
+          this?.onError(JSON.parse(xhr.response));
         }
       };
       xhr.onerror = this.onError.bind(this);
