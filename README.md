@@ -3,12 +3,12 @@
 The Google Visualization API Query Language (GQL) is not directly supported by the Google Sheets API. For that we can combine GQL with Google Sheets API. 
 
 ### Load gapi
-```
+```html
 <script src="https://apis.google.com/js/api.js"></script>
 ```
 
 ### Extent Sheets Query Code
-```
+```js
 const start = async () => {
   await gapi.client.init({
     discoveryDocs: [
@@ -109,7 +109,7 @@ gapi.load("client", start);
 ```
 
 ### Extend Drive upload
-```
+```js
 const start = async () => {
   await gapi.client.init({
     discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
